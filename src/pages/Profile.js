@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useLocation } from 'react-router-dom';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
+// import Paper from '@mui/material/Paper';
+// import Box from '@mui/material/Box';
 import Appbar from "../components/Appbar";
 import { Button } from '@mui/material';
   
@@ -33,7 +33,7 @@ function Profile(props){
             console.log(userData)
         };
         getUserData();
-    }, [])
+    }, [course, data.contactNumber, data.firstName, data.lastName, userData])
 
     const removeCourseInDatabase = () => {
         let url =

@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
+// import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Signin from './pages/Signin';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';

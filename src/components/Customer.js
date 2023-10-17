@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+// import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation, Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Container, makeStyles, Paper, Button } from '@mui/material';
+// import { Container, makeStyles, Paper, Button } from "@mui/material";
+import { Container, Paper, Button } from '@mui/material';
 
 export default function Customer(props) {
     const location = useLocation();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const paperStyle={padding: '50px 20px', width:600, margin:"20px auto"}
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastname] = useState('')
