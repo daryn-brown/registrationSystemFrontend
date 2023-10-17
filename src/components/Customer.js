@@ -21,16 +21,16 @@ export default function Customer(props) {
     const register = (e)=>{
         e.preventDefault()
         console.log(customer)
-        fetch("http://localhost:8080/customer/add",{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(customer)
-        }).then(()=>{
-            console.log("New Customer registered")
-            console.log(submitted)
-            setSubmitted(true)
-            console.log(submitted)
-        })
+        fetch("https://registration-backend-flw6.onrender.com/customer/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(customer),
+        }).then(() => {
+          console.log("New Customer registered");
+          console.log(submitted);
+          setSubmitted(true);
+          console.log(submitted);
+        });
     }
     
   return (

@@ -74,13 +74,13 @@ function Courses() {
         e.preventDefault()
         const customer={firstName,lastName,contactNumber,registeredCourse}
         console.log(customer)
-        fetch("http://localhost:8080/customer/add",{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(customer)
-        }).then(()=>{
-            console.log("New Customer registered")
-        })
+        fetch("https://registration-backend-flw6.onrender.com/customer/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(customer),
+        }).then(() => {
+          console.log("New Customer registered");
+        });
     }
     
   return (

@@ -15,7 +15,13 @@ function Profile(props){
 
     useEffect(() => {
         const getUserData = async() => {
-            let url = "http://localhost:8080/customer/user?firstname="+data.firstName+"&lastName="+data.lastName+"&contactNumber="+data.contactNumber;
+            let url =
+              "https://registration-backend-flw6.onrender.com/customer/user?firstname=" +
+              data.firstName +
+              "&lastName=" +
+              data.lastName +
+              "&contactNumber=" +
+              data.contactNumber;
             console.log(url)
             let response = await fetch(url,{
                     method:"GET",
@@ -30,7 +36,11 @@ function Profile(props){
     }, [])
 
     const removeCourseInDatabase = () => {
-        let url = "http://localhost:8080/customer/remove/course?courseName="+""+"&contactNumber="+data.contactNumber;
+        let url =
+          "https://registration-backend-flw6.onrender.com/customer/remove/course?courseName=" +
+          "" +
+          "&contactNumber=" +
+          data.contactNumber;
         fetch(url,{
             method:"PUT",
         }).then(()=>{
