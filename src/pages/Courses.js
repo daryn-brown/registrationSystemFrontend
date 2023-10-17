@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import Card from '@mui/material/Card';
+// import reptileImage from './contemplative-reptile.jpg';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -86,63 +87,71 @@ function Courses() {
     
   return (
     <div>
-            <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
-                    <Toolbar>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        Shift Left Course Registration
-                    </Typography>
-                    <Search>
-                        <SearchIconWrapper>
-                        <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                        placeholder="Search…"
-                        inputProps={{ 'aria-label': 'search' }}
-                        onChange={(e) => setSearch(e.target.value)}
-                        />
-                    </Search>
-                    <Button href="/signin" color="inherit">Sign In</Button>
-                    </Toolbar>
-                </AppBar>
-            </Box>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            >
+              Shift Left Course Registration
+            </Typography>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </Search>
+            <Button href="/signin" color="inherit">
+              Sign In
+            </Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
 
-            {courses.filter((course) => {
-                return search.toLowerCase() === '' 
-                ? course 
-                : course.name.toLowerCase().includes(search);
-            }).map((course)=> (
-            <Card sx={{ maxWidth: 345 }}>
+      {courses
+        .filter((course) => {
+          return search.toLowerCase() === ""
+            ? course
+            : course.name.toLowerCase().includes(search);
+        })
+        .map((course) => (
+          <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
-                <CardMedia
+              <CardMedia
                 component="img"
                 height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
+                image="/contemplative-reptile.jpg"
                 alt="green iguana"
-                />
-                <CardContent>
+              />
+              <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    {course.name}
+                  {course.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    {course.description}
+                  {course.description}
                 </Typography>
-                </CardContent>
+              </CardContent>
             </CardActionArea>
             <CardActions>
-                <Link to='/signup'
-                    state = {{
-                        data: course.name 
-                    }}
-                > Register Now! </Link>
+              <Link
+                to="/signup"
+                state={{
+                  data: course.name,
+                }}
+              >
+                {" "}
+                Register Now!{" "}
+              </Link>
             </CardActions>
-            </Card>
-            ))}
+          </Card>
+        ))}
     </div>
   );
 }
