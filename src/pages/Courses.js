@@ -146,8 +146,7 @@ function Courses() {
                   data: course.name,
                 }}
               >
-                {" "}
-                Register Now!{" "}
+                <Button variant="contained">Register Now!</Button>
               </Link>
             </CardActions>
           </Card>
