@@ -7,9 +7,11 @@ import { Container, Paper, Button } from "@mui/material";
 export default function Customer(props) {
   const location = useLocation();
   const paperStyle = {
-    padding: "3.125rem 1.25rem", // 50px 20px
-    width: "37.5rem", // 600px
-    margin: "1.25rem auto", // 20px auto
+    padding: "3.125rem 1.25rem",
+    width: "100%",
+    maxWidth: "95vw", // set a max-width based on viewport width
+    margin: "1.25rem auto", // center the container with auto margins on the sides
+    boxSizing: "border-box", // ensures padding is included in width
   };
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastname] = useState("");
@@ -40,6 +42,7 @@ export default function Customer(props) {
     <div
       style={{
         display: "flex",
+        flexDirection: "column", // set to column
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
@@ -49,7 +52,7 @@ export default function Customer(props) {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
+          "& > :not(style)": { m: 1, width: "25rem" },
         }}
         noValidate
         autoComplete="off"
@@ -59,7 +62,7 @@ export default function Customer(props) {
           alt="logo"
           style={{
             position: "absolute",
-            top: "10rem", // 160px
+            top: "14rem", // 160px
             width: "9.375rem", // 150px
             zIndex: 1,
           }}
