@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Paper, Button } from "@mui/material";
@@ -120,7 +120,7 @@ export default function Customer(props) {
             <Button variant="contained" onClick={register}>
               Submit
             </Button>
-            
+
             {submitted && (
               <Button
                 href="/profile"
