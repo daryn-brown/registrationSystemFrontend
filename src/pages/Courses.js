@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import Card from '@mui/material/Card';
-// import reptileImage from './contemplative-reptile.jpg';
+import Grid from "@mui/material/Grid";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -86,71 +86,83 @@ function Courses() {
     }
     
   return (
-    <div>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              Shift Left Course Registration
-            </Typography>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </Search>
-            <Button href="/signin" color="inherit">
-              Sign In
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+    >
+      <AppBar position="sticky">
+        <Toolbar sx={{ padding: "8px 16px" }}>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          >
+            Shift Left Course Registration
+          </Typography>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </Search>
+          <Button href="/signin" color="inherit">
+            Sign In
+          </Button>
+        </Toolbar>
+      </AppBar>
 
-      {courses
-        .filter((course) => {
-          return search.toLowerCase() === ""
-            ? course
-            : course.name.toLowerCase().includes(search);
-        })
-        .map((course) => (
-          <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image={course.image} // Use the image property from the course object
-                alt={course.name} // Use the course name as the alt text
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {course.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {course.description}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Link
-                to="/signup"
-                state={{
-                  data: course.name,
-                }}
-              >
-                <Button variant="contained">Register Now!</Button>
-              </Link>
-            </CardActions>
-          </Card>
-        ))}
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          mt: 8,
+        }}
+      >
+        <Grid container spacing={3} justifyContent="center">
+          {courses
+            .filter((course) => {
+              return search.toLowerCase() === ""
+                ? course
+                : course.name.toLowerCase().includes(search);
+            })
+            .map((course) => (
+              <Card sx={{ width: '300px', height: "100%", margin: 1 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={course.image} // Use the image property from the course object
+                    alt={course.name} // Use the course name as the alt text
+                  />
+                  <CardContent sx={{ height: '100px' }}>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {course.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {course.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Link
+                    to="/signup"
+                    state={{
+                      data: course.name,
+                    }}
+                  >
+                    <Button variant="contained">Register Now!</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+            ))}
+        </Grid>
+      </Box>
     </div>
   );
 }
