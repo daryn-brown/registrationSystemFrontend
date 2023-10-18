@@ -36,43 +36,82 @@ export default function Customer(props) {
     }
     
   return (
-    <div>
-    <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
       }}
-      noValidate
-      autoComplete="off"
     >
-        <Container>
-            <Paper elevation={3} style={paperStyle}>
-                <h1>Register Now!</h1>
-                    <TextField required type={'text'} id="outlined-basic" label="First name" variant="outlined" fullWidth
-                    value={firstName}
-                    onChange={(e)=>setFirstName(e.target.value)}
-                    />
-                    <TextField required type={'text'} id="outlined-basic" label="Last Name" variant="outlined" fullWidth
-                    value={lastName}
-                    onChange={(e)=>setLastname(e.target.value)}
-                    />
-                    <TextField required type={'tel'} id="outlined-basic" label="Contact Number" variant="outlined" fullWidth
-                    value={contactNumber}
-                    onChange={(e)=>setContactNumber(e.target.value)}
-                    />
-                    <TextField id="outlined-read-only-input" label="Course" defaultValue={data} fullWidth
-                    InputProps={{readOnly: true,}}
-                    />
-                    
-                    <Button variant="contained" onClick={register} >Submit</Button>
-                    {submitted && <Link to ='/profile'
-                    state = {{
-                        data: customer
-                    }}
-                > View Profile </Link>}
-            </Paper>
-        </Container>
-    </Box>
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <Paper elevation={3} style={paperStyle}>
+          <h1>Register Now!</h1>
+          <TextField
+            required
+            type={"text"}
+            id="outlined-basic"
+            label="First name"
+            variant="outlined"
+            fullWidth
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            style={{ marginBottom: "16px" }}
+          />
+          <TextField
+            required
+            type={"text"}
+            id="outlined-basic"
+            label="Last Name"
+            variant="outlined"
+            fullWidth
+            value={lastName}
+            onChange={(e) => setLastname(e.target.value)}
+            style={{ marginBottom: "16px" }}
+          />
+          <TextField
+            required
+            type={"tel"}
+            id="outlined-basic"
+            label="Contact Number"
+            variant="outlined"
+            fullWidth
+            value={contactNumber}
+            onChange={(e) => setContactNumber(e.target.value)}
+            style={{ marginBottom: "16px" }}
+          />
+          <TextField
+            id="outlined-read-only-input"
+            label="Course"
+            defaultValue={data}
+            fullWidth
+            InputProps={{ readOnly: true }}
+            style={{ marginBottom: "16px" }}
+          />
+
+          <Button variant="contained" onClick={register}>
+            Submit
+          </Button>
+          {submitted && (
+            <Link
+              to="/profile"
+              state={{
+                data: customer,
+              }}
+            >
+              {" "}
+              View Profile{" "}
+            </Link>
+          )}
+        </Paper>
+      </Box>
     </div>
   );
 }
