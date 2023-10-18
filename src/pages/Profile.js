@@ -70,7 +70,7 @@ function Profile(props){
             }}
           >
             <PersonIcon style={{ marginRight: "8px" }} />
-            <h3>
+            <h3 style={{ color: "black" }}>
               {userData.firstName} {userData.lastName}
             </h3>
           </div>
@@ -83,7 +83,7 @@ function Profile(props){
             }}
           >
             <BookIcon style={{ marginRight: "8px" }} />
-            <h3>{userData.registeredCourses}</h3>
+            <h3 style={{ color: "black" }}>{userData.registeredCourses}</h3>
           </div>
 
           <Button onClick={removeCourseInDatabase} variant="contained">
