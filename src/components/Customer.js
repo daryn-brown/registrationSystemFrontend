@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Container, Paper, Button } from "@mui/material";
+import { Paper, Button } from "@mui/material";
 
 export default function Customer(props) {
   const location = useLocation();
