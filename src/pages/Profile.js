@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 // import Box from '@mui/material/Box';
 import Appbar from "../components/Appbar";
 import { Button } from '@mui/material';
+import PersonIcon from "@mui/icons-material/Person";
+import BookIcon from "@mui/icons-material/Book";
   
 function Profile(props){
     const location = useLocation();
@@ -49,15 +51,45 @@ function Profile(props){
         })
     }
     return (
-        <div>
-            <Appbar/>
-                <h2>{userData.firstName}</h2>
-                <h2>{userData.lastName}</h2>
-                
-                <h2>{userData.registeredCourses}</h2>
-                <Button onClick={removeCourseInDatabase}> Remove Course </Button>
+      <div>
+        <Appbar />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "16px",
+            }}
+          >
+            <PersonIcon style={{ marginRight: "8px" }} />
+            <h3>
+              {userData.firstName} {userData.lastName}
+            </h3>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "16px",
+            }}
+          >
+            <BookIcon style={{ marginRight: "8px" }} />
+            <h3>{userData.registeredCourses}</h3>
+          </div>
+
+          <Button onClick={removeCourseInDatabase}> Remove Course </Button>
         </div>
-      );
+      </div>
+    );
 }
 
 export default Profile;
