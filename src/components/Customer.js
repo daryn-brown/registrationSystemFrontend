@@ -120,20 +120,20 @@ export default function Customer(props) {
             <Button variant="contained" onClick={register}>
               Submit
             </Button>
-
-            {submitted && (
-              <Link
-                underline="hover"
-                to="/profile"
-                state={{
-                  data: customer,
-                }}
-              >
-                {" "}
-                VIEW PROFILE{" "}
-              </Link>
-            )}
           </div>
+
+          {submitted && (
+            <Link
+              underline="hover"
+              to="/profile"
+              state={{
+                data: customer,
+              }}
+            >
+              {" "}
+              VIEW PROFILE{" "}
+            </Link>
+          )}
         </Paper>
       </Box>
     </div>
