@@ -53,15 +53,41 @@ function Profile(props){
     return (
       <div>
         <Appbar />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "16px",
+            }}
+          >
+            <PersonIcon style={{ marginRight: "8px" }} />
+            <h3>
+              {userData.firstName} {userData.lastName}
+            </h3>
+          </div>
 
-        <PersonIcon />
-        <h3>
-          {userData.firstName} {userData.lastName}
-        </h3>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "16px",
+            }}
+          >
+            <BookIcon style={{ marginRight: "8px" }} />
+            <h3>{userData.registeredCourses}</h3>
+          </div>
 
-        <BookIcon />
-        <h3>{userData.registeredCourses}</h3>
-        <Button onClick={removeCourseInDatabase}> Remove Course </Button>
+          <Button onClick={removeCourseInDatabase}> Remove Course </Button>
+        </div>
       </div>
     );
 }
