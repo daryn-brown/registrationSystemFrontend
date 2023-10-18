@@ -1,18 +1,22 @@
 export const courses = [
-    {
-        name:"Database Development 101",
-        description: ""
-    },
-    {
-        name:"Cloud Security - Beginner",
-        description: ""
-    },
-    {
-        name:"Backend Development 101 - Java",
-        description: ""
-    },
-    {
-        name:"Frontend Development 101 - reactjs",
-        description: ""
-    },
-]
+  {
+    name: "Database Development 101",
+    description: "",
+    image: "/database-dev.png",
+  },
+  {
+    name: "Cloud Security - Beginner",
+    description: "",
+    image: "/cloud-security.png",
+  },
+  {
+    name: "Backend Development 101 - Java",
+    description: "",
+    image: "/backend-dev.png",
+  },
+  {
+    name: "Frontend Development 101 - reactjs",
+    description: "",
+    image: "/frontend-dev.png"
+  },
+];

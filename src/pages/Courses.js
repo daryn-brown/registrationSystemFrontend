@@ -127,8 +127,8 @@ function Courses() {
               <CardMedia
                 component="img"
                 height="140"
-                image="/contemplative-reptile.jpg"
-                alt="green iguana"
+                image={course.image} // Use the image property from the course object
+                alt={course.name} // Use the course name as the alt text
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
