@@ -86,7 +86,10 @@ function Profile(props){
             <h3>{userData.registeredCourses}</h3>
           </div>
 
-          <Button onClick={removeCourseInDatabase}> Remove Course </Button>
+          <Button onClick={removeCourseInDatabase} variant="contained">
+            {" "}
+            Remove Course{" "}
+          </Button>
         </div>
       </div>
     );
