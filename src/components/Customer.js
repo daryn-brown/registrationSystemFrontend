@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Paper, Button } from "@mui/material";
+import { Paper, Button, Link } from "@mui/material";
 
 export default function Customer(props) {
   const location = useLocation();
@@ -122,15 +122,16 @@ export default function Customer(props) {
             </Button>
 
             {submitted && (
-              <Button
-                href="/profile"
+              <Link
+                underline="hover"
+                to="/profile"
                 state={{
                   data: customer,
                 }}
               >
                 {" "}
-                View Profile{" "}
-              </Button>
+                VIEW PROFILE{" "}
+              </Link>
             )}
           </div>
         </Paper>
