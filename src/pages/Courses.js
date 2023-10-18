@@ -116,8 +116,7 @@ function Courses() {
       </AppBar>
 
       <Box
-        sx={{
-          flexGrow: 1,
+        sx={{   
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
