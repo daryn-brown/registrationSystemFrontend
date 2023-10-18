@@ -122,18 +122,26 @@ export default function Customer(props) {
             </Button>
           </div>
 
-          {submitted && (
-            <Link
-              underline="hover"
-              to="/profile"
-              state={{
-                data: customer,
-              }}
-            >
-              {" "}
-              VIEW PROFILE{" "}
-            </Link>
-          )}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "1rem", // 16px
+            }}
+          >
+            {submitted && (
+              <Link
+                underline="hover"
+                to="/profile"
+                state={{
+                  data: customer,
+                }}
+              >
+                {" "}
+                VIEW PROFILE{" "}
+              </Link>
+            )}
+          </div>
         </Paper>
       </Box>
     </div>
