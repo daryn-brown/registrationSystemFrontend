@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Paper, Button, Link } from "@mui/material";
+import { Paper, Button } from "@mui/material";
 
 export default function Customer(props) {
   const location = useLocation();
-  const paperStyle = {
+    const paperStyle = {
     padding: "3.125rem 1.25rem",
     width: "100%",
     maxWidth: "95vw", // set a max-width based on viewport width
